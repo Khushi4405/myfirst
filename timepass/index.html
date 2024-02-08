@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Valentine's Day Card</title>
+    <meta name="description" content="Will you be my valentine?" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="16x16" />
+    <link
+      rel="preload"
+      href="/_next/static/media/c9a5bc6a7c948fb0-s.p.woff2"
+      as="font"
+      crossorigin=""
+      type="font/woff2"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="https://tenor.com/en-GB/view/shakespaw-gif-5987425183987963867"
+    />
+
+    <link
+      rel="stylesheet"
+      href="/_next/static/css/554796c3191cdae8.css"
+      crossorigin=""
+      data-precedence="next"
+    />
+    <link
+      rel="preload"
+      as="script"
+      fetchPriority="low"
+      href="/_next/static/chunks/webpack-7086a7543d1dc029.js"
+      crossorigin=""
+    />
+    <script
+      src="/_next/static/chunks/fd9d1056-534a3af521b04580.js"
+      async=""
+      crossorigin=""
+    ></script>
+    <script
+      src="/_next/static/chunks/69-5788959f6f1d2963.js"
+      async=""
+      crossorigin=""
+    ></script>
+    <script
+      src="/_next/static/chunks/main-app-f5c8d25c8479457f.js"
+      async=""
+      crossorigin=""
+    ></script>
+    <script
+      src="/_next/static/chunks/app/page-a53c2c10bc9b282e.js"
+      async=""
+    ></script>
+    <script
+      src="/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"
+      crossorigin=""
+      nomodule=""
+    ></script>
+
+    <style>
+      body,
+      html {
+        height: 100%;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .content-container {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body class="__className_e66fe9">
+    <div class="flex flex-col items-center justify-center h-screen -mt-16">
+      <img
+        id="valentineImage"
+        class="h-[200px]"
+        src="shakespaw.gif"
+        width="190px"
+        alt="Shakespaw GIF"
+      />
+
+      <h1 class="text-4xl my-4 text-center" id="question">
+        Will you be my Valentine?
+      </h1>
+      <div
+        class="flex flex-wrap flex-col md:flex-row gap-4 items-center justify-center"
+        id="buttonSection"
+      >
+        <button
+          id="yesButton"
+          class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+          style="
+            font-size: 20px;
+            background-color: rgb(28, 214, 28);
+            border-radius: 3px;
+            box-shadow: none;
+            margin-left: 0%;
+          "
+        >
+          Yes
+        </button>
+        <button
+          id="noButton"
+          class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+          style="
+            background-color: red;
+            font-size: 20px;
+            border-radius: 5px;
+            box-shadow: none;
+            margin-left: 0%;
+          "
+        >
+          No
+        </button>
+      </div>
+
+      <div id="messageSection" style="display: none">
+        <h2 id="message" style="text-align: center"></h2>
+      </div>
+    </div>
+
+    <script>
+      const yesButton = document.getElementById("yesButton");
+      const noButton = document.getElementById("noButton");
+      const valentineImage = document.getElementById("valentineImage");
+      const question = document.getElementById("question");
+      const messageSection = document.getElementById("messageSection");
+      const message = document.getElementById("message");
+      const buttonSection = document.getElementById("buttonSection");
+
+      yesButton.addEventListener("click", function () {
+        valentineImage.src = "yes.gif";
+        question.style.display = "none";
+        buttonSection.style.display = "none";
+        message.textContent = "Yay !! I knew it.";
+        messageSection.style.display = "block";
+      });
+
+      let clickCount = 0;
+
+      noButton.addEventListener("click", function () {
+        clickCount++;
+
+        switch (clickCount) {
+          case 1:
+            noButton.textContent = "Are you sure?";
+            yesButton.style.fontSize = "20px";
+            break;
+          case 2:
+            noButton.textContent = "Really?";
+            yesButton.style.fontSize = "30px";
+            break;
+          case 3:
+            noButton.textContent = "Please!!?";
+            yesButton.style.fontSize = "40px";
+            break;
+          case 4:
+            noButton.textContent = "Pretty Please!!?";
+            yesButton.style.fontSize = "50px";
+            break;
+          case 5:
+            noButton.textContent = "I will be sad !!";
+            yesButton.style.fontSize = "60px";
+            break;
+          case 6:
+            noButton.textContent = "I will be very sad !!";
+            yesButton.style.fontSize = "70px";
+            break;
+          case 7:
+            noButton.textContent = "I will be very very sad!!";
+            yesButton.style.fontSize = "80px";
+            break;
+          case 8:
+            noButton.textContent = "How can u do this with me!";
+            yesButton.style.fontSize = "90px";
+            break;
+          case 9:
+            noButton.textContent = "I will not ask u again ?";
+            yesButton.style.fontSize = "100px";
+            break;
+          case 10:
+            noButton.textContent = "I will cry!!";
+            yesButton.style.fontSize = "130px";
+            break;
+          case 11:
+            noButton.textContent = "Fine, I'll just stop asking!";
+            yesButton.style.fontSize = "150px";
+            break;
+          case 12:
+            noButton.textContent = "Just Kidding !!";
+            yesButton.style.fontSize = "180px";
+            break;
+
+          default:
+            clickCount = 0;
+            noButton.textContent = "No";
+            break;
+        }
+      });
+    </script>
+  </body>
+</html>
